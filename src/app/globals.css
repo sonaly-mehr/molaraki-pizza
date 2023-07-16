@@ -2,26 +2,134 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@font-face {
+  font-family: "Segoesc";
+  src: url("../assets/fonts/segoesc.ttf");
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-weight: 400;
+  overflow-x: hidden;
+}
+:focus {
+  outline: none;
+}
+.translate {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.slide {
+  width: 100%;
+  height: auto;
+}
+.slide {
+  transform: scale(0.7);
+}
+.slide-active {
+  transform: scale(1);
+}
+.hero-gradient-bg {
+  background: linear-gradient(90deg, #fffeff 0%, #d7fffe 100%);
+}
+.active-border {
+  position: absolute;
+  left: 0;
+  background: #26c0ea;
+  width: 150px;
+  height: 8px;
+  top: 109px;
+}
+.gallery-container .slick-dots li.slick-active button::before {
+  background: #26c0ea;
+  border-radius: 20px;
+  width: 40px;
+}
+.gallery-container .slick-dots li {
+  width: 30px !important;
+}
+.gallery-container .slick-dots li.slick-active {
+  margin-right: 25px;
+}
+.gallery-container .slick-dots {
+  bottom: -50px !important;
+}
+.gallery-container .slick-prev,
+.gallery-container .slick-next {
+  top: 50% !important;
+  width: auto !important;
+  z-index: 200;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.gallery-container .slick-prev {
+  left: 0 !important;
+}
+.gallery-container .slick-next {
+  right: 0 !important;
+}
+.slick-next::before,
+.slick-prev::before {
+  font-size: 0px !important;
+}
+.gallery-container .slick-dots li button::before {
+  content: "" !important;
+  background: #d9d9d9;
+  opacity: 1;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+.rotate-text {
+  animation: rotateText 10s linear infinite;
+}
+@keyframes rotateText {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }
+.items-body > div {
+  padding: 0 !important;
+  font-family: var(--font-montserrat);
+}
+.items-body p {
+  font-family: var(--font-opensans) !important;
+  font-weight: 400;
+}
+.width {
+  @apply md:w-[90%] m-auto px-4 md:px-0;
+}
+.heading {
+  @apply text-primary font-['Segoesc'] text-3xl md:text-[56px] leading-[90px];
+}
+.headerBorder {
+  @apply absolute bottom-[15px] md:bottom-0 left-1/2 translate-x-[-50%] w-[280px] md:w-auto;
+}
+.paragraph {
+  @apply text-sm md:text-xl;
+}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@media screen and (max-width: 768px) {
+  .tabs-header {
+    flex-wrap: wrap;
+  }
+  .tabs-header li {
+    width: auto;
+  }
+  .active-border {
+    width: 0px;
+    height: 0px;
+  }
+  .slick-dots li button::before {
+    width: 15px !important;
+    height: 15px !important;
+  }
+  .slick-dots li.slick-active button::before {
+    width: 40px !important;
+  }
 }
