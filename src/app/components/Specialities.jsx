@@ -1,5 +1,4 @@
 import Image from "next/image";
-import React from "react";
 import border from "../../assets/img/border.png";
 import delivery from "../../assets/img/delivery.png";
 import fresh from "../../assets/img/fresh.png";

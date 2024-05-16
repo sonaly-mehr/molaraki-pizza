@@ -1,18 +1,17 @@
-import Image from "next/image";
 import Hero from "./components/Hero";
 import Map from "./components/Map";
-import Specialities from "./components/specialities";
 import About from "./components/About";
 import Dishes from "./components/Dishes";
 import Contact from "./components/Contact";
 import Gallery from "./components/Gallery";
 import Menu from "./components/Menu/Menu";
+import Specialities from "./components/Specialities";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <Specialities />
+      <Specialities/>
       <Dishes />
       <About />
       <Menu />
